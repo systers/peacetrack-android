@@ -10,6 +10,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
     android:orientation="vertical" >
 
     <TextView
@@ -192,19 +193,21 @@
         <EditText
             android:id="@+id/cohortAgeRangeLower"
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:layout_height="wrap_content"
             android:layout_marginBottom="0dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/rounded_edittext"
             android:inputType="number"
+            android:hint="Lower Limit"
+            android:textColorHint="@color/lightgrey"
             android:paddingBottom="10dp"
             android:paddingLeft="15dp"
             android:paddingRight="10dp"
             android:paddingTop="10dp"
             android:textColor="@color/darkgrey"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
         <TextView
@@ -225,19 +228,21 @@
         <EditText
             android:id="@+id/cohortAgeRangeHigher"
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:layout_height="wrap_content"
             android:layout_marginBottom="0dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/rounded_edittext"
+            android:hint="Upper Limit"
+            android:textColorHint="@color/lightgrey"
             android:inputType="number"
             android:paddingBottom="10dp"
             android:paddingLeft="15dp"
             android:paddingRight="10dp"
             android:paddingTop="10dp"
             android:textColor="@color/darkgrey"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -312,6 +317,7 @@
 	  android:layout_marginTop="10dp"
 	  android:layout_marginLeft="10dp"
 	  android:layout_marginRight="10dp"
+      android:layout_marginBottom="20dp"
 	  android:padding="10dp"
 	  android:text="@string/save"
       android:textColor="@color/darkgrey"
