@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.peacetrack.views.cohorts;
 
@@ -115,6 +115,16 @@ public class AddCohortActivity extends ActionBarActivity implements View.OnClick
 					Toast.LENGTH_SHORT).show();
 			return;
 		}
+		//checking if number of males + number of females is not greater than total members
+        int total_members=Integer.parseInt(noOfMembers);
+        int male_members=Integer.parseInt(noOfMales);
+        int female_members=Integer.parseInt(noOfFemales);
+
+        if(total_members<(male_members+female_members))
+        {
+            Toast.makeText(this,"Sum of Male and Female members should be less than the total members.",Toast.LENGTH_SHORT).show();
+            return;
+        }
 
 		cohort.setName(name);
 		cohort.setDescription(descriptionEditText.getText().toString());
