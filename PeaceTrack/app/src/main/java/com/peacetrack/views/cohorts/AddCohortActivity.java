@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.peacetrack.views.cohorts;
 
@@ -115,6 +115,17 @@ public class AddCohortActivity extends ActionBarActivity implements View.OnClick
 					Toast.LENGTH_SHORT).show();
 			return;
 		}
+
+		 //checking if age is entered correctly
+        int lower_age=Integer.parseInt(ageLower);
+        int higher_age=Integer.parseInt(ageHigher);
+
+        if(lower_age>higher_age)
+        {
+            Toast.makeText(this,"Age range entered incorrectly",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
 
 		cohort.setName(name);
 		cohort.setDescription(descriptionEditText.getText().toString());
