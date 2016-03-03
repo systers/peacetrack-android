@@ -93,7 +93,9 @@
         android:padding="10dp"
         android:text="@string/addnewactivity"
         android:textStyle="bold"
-        android:id="@+id/addnewactivitybutton"/>
+        android:id="@+id/addnewactivitybutton"
+        android:background="@drawable/button_shape"
+/>
     <Button
         android:textSize="22sp"
         android:textColor="@android:color/white"
@@ -102,6 +104,8 @@
         android:padding="10dp"
         android:text="@string/addnewmeasurement"
         android:textStyle="bold"
-        android:id="@+id/addnewmeasurementbutton"/>
+        android:id="@+id/addnewmeasurementbutton"
+        android:background="@drawable/button_shape"
+/>
     </LinearLayout>
 </ScrollView>
