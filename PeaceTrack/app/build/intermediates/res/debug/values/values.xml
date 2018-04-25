@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -23,10 +23,10 @@
     <color name="background_floating_material_light">#ffeeeeee</color>
     <color name="background_material_dark">#ff303030</color>
     <color name="background_material_light">#ffeeeeee</color>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/src/main/res/values/colors_vrf.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/values/colors_vrf.xml -->
     <eat-comment/>
     <color name="blue">#0099CC</color>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
@@ -36,35 +36,35 @@
     <color name="bright_foreground_material_light">@android:color/black</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/src/main/res/values/colors_vrf.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/values/colors_vrf.xml -->
     <eat-comment/>
     <color name="darkblue">#005977</color>
     <color name="darkergrey">#242424</color>
     <color name="darkgreen">#399639</color>
     <color name="darkgrey">#464646</color>
     <color name="darkorange">#C1610D</color>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/src/main/res/values/colors_vrf.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/values/colors_vrf.xml -->
     <eat-comment/>
     <color name="green">#7ACC7A</color>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="hint_foreground_material_dark">@color/bright_foreground_disabled_material_dark</color>
     <color name="hint_foreground_material_light">@color/bright_foreground_disabled_material_light</color>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/src/main/res/values/colors_vrf.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/values/colors_vrf.xml -->
     <eat-comment/>
     <color name="homeitemdarkgrey">#A7A7A7</color>
     <color name="homeitemlightgrey">#FCFCFC</color>
     <color name="lightergrey">#E3E3E3</color>
     <color name="lightgrey">#CACACA</color>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <color name="link_text_material_dark">@color/material_deep_teal_200</color>
     <color name="link_text_material_light">@color/material_deep_teal_500</color>
@@ -73,11 +73,11 @@
     <color name="material_blue_grey_950">#ff21272b</color>
     <color name="material_deep_teal_200">#ff80cbc4</color>
     <color name="material_deep_teal_500">#ff009688</color>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/src/main/res/values/colors_vrf.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/values/colors_vrf.xml -->
     <eat-comment/>
     <color name="orange">#F08222</color>
     <color name="pressed_vrf">#CCF86C6C</color>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <color name="primary_dark_material_dark">#ff000000</color>
     <color name="primary_dark_material_light">#ff757575</color>
@@ -97,7 +97,7 @@
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/src/main/res/values/colors_vrf.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/values/colors_vrf.xml -->
     <eat-comment/>
     <color name="white">#FFFFFF</color>
     <declare-styleable name="ActionBar"><attr name="navigationMode"><enum name="normal" value="0"/><enum name="listMode" value="1"/><enum name="tabMode" value="2"/></attr><attr name="displayOptions"><flag name="none" value="0"/><flag name="useLogo" value="0x1"/><flag name="showHome" value="0x2"/><flag name="homeAsUp" value="0x4"/><flag name="showTitle" value="0x8"/><flag name="showCustom" value="0x10"/><flag name="disableHome" value="0x20"/></attr><attr name="title"/><attr format="string" name="subtitle"/><attr format="reference" name="titleTextStyle"/><attr format="reference" name="subtitleTextStyle"/><attr format="reference" name="icon"/><attr format="reference" name="logo"/><attr format="reference" name="divider"/><attr format="reference" name="background"/><attr format="reference|color" name="backgroundStacked"/><attr format="reference|color" name="backgroundSplit"/><attr format="reference" name="customNavigationLayout"/><attr name="height"/><attr format="reference" name="homeLayout"/><attr format="reference" name="progressBarStyle"/><attr format="reference" name="indeterminateProgressStyle"/><attr format="dimension" name="progressBarPadding"/><attr name="homeAsUpIndicator"/><attr format="dimension" name="itemPadding"/><attr format="boolean" name="hideOnContentScroll"/><attr format="dimension" name="contentInsetStart"/><attr format="dimension" name="contentInsetEnd"/><attr format="dimension" name="contentInsetLeft"/><attr format="dimension" name="contentInsetRight"/><attr format="dimension" name="elevation"/><attr format="reference" name="popupTheme"/></declare-styleable>
@@ -125,7 +125,7 @@
     <declare-styleable name="Toolbar"><attr format="reference" name="titleTextAppearance"/><attr format="reference" name="subtitleTextAppearance"/><attr name="title"/><attr name="subtitle"/><attr name="android:gravity"/><attr format="dimension" name="titleMargins"/><attr format="dimension" name="titleMarginStart"/><attr format="dimension" name="titleMarginEnd"/><attr format="dimension" name="titleMarginTop"/><attr format="dimension" name="titleMarginBottom"/><attr name="contentInsetStart"/><attr name="contentInsetEnd"/><attr name="contentInsetLeft"/><attr name="contentInsetRight"/><attr format="dimension" name="maxButtonHeight"/><attr format="reference" name="collapseIcon"/><attr format="string" name="collapseContentDescription"/><attr name="popupTheme"/><attr format="reference" name="navigationIcon"/><attr format="string" name="navigationContentDescription"/><attr name="android:minHeight"/></declare-styleable>
     <declare-styleable name="View"><attr format="dimension" name="paddingStart"/><attr format="dimension" name="paddingEnd"/><attr name="android:focusable"/><attr format="reference" name="theme"/><attr name="android:theme"/><attr format="color" name="backgroundTint"/><attr name="backgroundTintMode"><enum name="src_over" value="3"/><enum name="src_in" value="5"/><enum name="src_atop" value="9"/><enum name="multiply" value="14"/><enum name="screen" value="15"/></attr></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
@@ -187,11 +187,11 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
     <item name="dialog_fixed_height_minor" type="dimen">100%</item>
@@ -217,6 +217,11 @@
     <integer name="abc_max_action_buttons">2</integer>
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="Activitydetailsactivity_label">Activity Details</string>
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
     <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
@@ -234,11 +239,20 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_settings">Settings</string>
     <string name="activityDateHint">Pick a Date</string>
+    <string name="activityDeleteMessage">Are you sure you want to delete this activity? This cannot be undone.</string>
+    <string name="activityDeleteTitle">Delete Activity</string>
+    <string name="activityOutputHint">Set Outputs</string>
     <string name="activityTimeHint">Pick a Time</string>
+    <string name="activityactivity_description_label">DESCRIPTION</string>
+    <string name="activitycheck">Please Enter Activity Title, Date and Time.</string>
+    <string name="activitydatecheck">Please Enter Date.</string>
+    <string name="activitynamecheck">Please Enter Activity Title.</string>
+    <string name="activitytimecheck">Please Enter Time.</string>
+    <string name="addActivityOutputTitle">Select Relevant Outputs:</string>
     <string name="addacountbutton">Add Account</string>
     <string name="addactivity">Add Activity</string>
     <string name="addactivityactivity_cohort_label">RELEVANT COHORT</string>
@@ -248,50 +262,74 @@
     <string name="addactivityactivity_outputs_label">ASSOCIATED OUTPUTS</string>
     <string name="addactivityactivity_time_label">TIME</string>
     <string name="addactivityactivity_title_label">TITLE</string>
-    <string name="addanotheroutput">Add Another Output</string>
     <string name="addcohort">Add Cohort</string>
+    <string name="addcohortactivity_agerange_label">AGE RANGE (yrs)</string>
+    <string name="addcohortactivity_description_label">DESCRIPTION (optional)</string>
+    <string name="addcohortactivity_females_label">FEMALES</string>
     <string name="addcohortactivity_label">Add Cohort</string>
+    <string name="addcohortactivity_males_label">MALES</string>
+    <string name="addcohortactivity_members_label">NO OF MEMBERS</string>
+    <string name="addcohortactivity_name_label">NAME</string>
+    <string name="addcohortactivity_other_label">OTHER NOTES (optional)</string>
+    <string name="addcohortactivity_position_label">POSITION</string>
     <string name="addindicatorsactivity_label">Add Indicators</string>
     <string name="addmeasurement">Add Measurement</string>
     <string name="addmeasurementactivity_label">Add Measurement</string>
     <string name="addnewactivity">Add a new activity</string>
     <string name="addnewmeasurement">Add a new measurement</string>
+    <string name="addoutput">Add Output</string>
     <string name="agerangehint">Age Range</string>
     <string name="allactivitiesactivity_label">All Activities</string>
     <string name="allcohortsactivity_label">All Cohorts</string>
     <string name="allmeasurementsactivity_label">All Measurements</string>
     <string name="app_name">PeaceTrack</string>
-    <string name="associatedoutcomehint">Associated Outcome and outcome data</string>
+    <string name="back">Back</string>
+    <string name="cancel">Cancel</string>
     <string name="cohort">My Cohorts</string>
+    <string name="cohortDeleteMessage">Are you sure you want to delete this cohort? This cannot be undone.</string>
+    <string name="cohortDeleteTitle">Delete Cohort</string>
     <string name="cohortListEmptyMessage">Cohort list is empty. Do you want to create a new cohort?</string>
     <string name="cohortListEmptyTitle">No Cohorts</string>
-    <string name="cohortdescriptionhint">Optional Short Description</string>
+    <string name="cohortcheck">Please Enter Cohort Details.</string>
+    <string name="cohortdetailsactivity_description_label">DESCRIPTION</string>
     <string name="cohortdetailsactivity_label">Cohort Profile</string>
-    <string name="cohortnamehint">Name</string>
+    <string name="cohortdetailsactivity_member_label">MEMBERS</string>
+    <string name="cohortdetailsactivity_other_label">OTHER NOTES</string>
+    <string name="cohortnamecheck">Please Enter Cohort Name.</string>
     <string name="cohortnoteshint">Other Relevant Notes</string>
     <string name="delete">Delete</string>
+    <string name="done">Done</string>
+    <string name="duplicateactivitycheck">This Activity Already Exists. Please use a different title.</string>
     <string name="duplicatecohortcheck">This Cohort Already Exists. Please use a different name.</string>
+    <string name="duplicatemeasurementcheck">This Measurement Already Exists. Please use a different title.</string>
     <string name="edit">Edit</string>
     <string name="email">E-mail</string>
-    <string name="emailcheck">Please Enter Valid Email Address</string>
+    <string name="emailcheck">Please Enter Valid Email Address.</string>
     <string name="femaleshint">Number Of Females</string>
-    <string name="hello_world">Hello world!</string>
     <string name="impact">My Impacts</string>
     <string name="login">Login</string>
     <string name="maleshint">Number Of Males</string>
-    <string name="measurementcohortnamehint">Relevant Cohort Name(s)</string>
-    <string name="measurementdescriptionhint">Optional Short Description</string>
+    <string name="measurementactivity_outcome_data_label">OUTCOME DATA</string>
+    <string name="measurementactivity_outcome_label">OUTCOME</string>
+    <string name="measurementcheck">Please Enter Measurement Title, Date and Outcome Data.</string>
     <string name="measurementdetailsactivity_label">Measurement Profile</string>
-    <string name="measurementnamehint">Title</string>
+    <string name="measurementoutcomecheck">Please Enter Outcome Data.</string>
+    <string name="measurementtitlecheck">Please Enter Measurement Title.</string>
     <string name="name">Name</string>
-    <string name="nameandemailcheck">Please Enter Your Name and Valid Email Address</string>
-    <string name="namecheck">Please Enter Your Name</string>
+    <string name="nameandemailcheck">Please Enter Your Name and Valid Email Address.</string>
+    <string name="namecheck">Please Enter Your Name.</string>
     <string name="networkUnavailableMessage">Turn on mobile data or use WiFi to login to PeaceTrack.</string>
     <string name="networkUnavailableTitle">No Internet Connection</string>
+    <string name="next">Next</string>
     <string name="no">NO</string>
+    <string name="noDataMessage">There was an error fetching data from the server.</string>
+    <string name="noDataTitle">Error in Fetching Data</string>
     <string name="ok">OK</string>
-    <string name="outputdata">Output Data</string>
-    <string name="outputname">Output Name</string>
+    <string name="outputcheck">Please Enter Output Name and Data.</string>
+    <string name="outputdata">OUTPUT DATA</string>
+    <string name="outputdatacheck">Please Enter Output Data.</string>
+    <string name="outputname">OUTPUT NAME</string>
+    <string name="outputnamecheck">Please Enter Output Name.</string>
     <string name="participantshint">Number Of Members</string>
     <string name="peaceTrack">PeaceTrack</string>
     <string name="positioncommunityhint">Position Within Community</string>
@@ -301,22 +339,22 @@
     <string name="quickmeasurement">Quickly Add  Measurement</string>
     <string name="save">Save</string>
     <string name="search">Search</string>
+    <string name="searchInputCohort">Search Cohort..</string>
     <string name="sector">Sector</string>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="textview">TextView</string>
     <string name="welcomeactivity_label">DashBoard</string>
     <string name="yes">YES</string>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
         <!--
@@ -328,7 +366,7 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
@@ -1244,14 +1282,14 @@
         <item name="android:scaleType">center</item>
         <item name="android:background">?attr/selectableItemBackground</item>
     </style>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="NoActionBar" parent="AppBaseTheme"> 
         <item name="android:displayOptions">showHome|homeAsUp|showTitle</item>
 		<item name="displayOptions">showHome|homeAsUp|showTitle</item>
 		<item name="android:icon">@android:color/transparent</item>
     </style>
-    <!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>

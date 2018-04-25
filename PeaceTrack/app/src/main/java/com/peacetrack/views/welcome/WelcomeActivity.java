@@ -25,7 +25,6 @@ public class WelcomeActivity extends ActionBarActivity implements
         OnClickListener {
 
     private Button cohortsButton;
-    private Button impactButton;
     private Button addActivityButton;
     private Button addMeasurementButton;
 
@@ -51,14 +50,12 @@ public class WelcomeActivity extends ActionBarActivity implements
 
     private void initialize() {
         cohortsButton = (Button) findViewById(R.id.cohortsButton);
-        impactButton = (Button) findViewById(R.id.impactButton);
         addActivityButton = (Button) findViewById(R.id.addActivityButton);
         addMeasurementButton = (Button) findViewById(R.id.addMeasurementButton);
     }
 
     private void bindListeners() {
         cohortsButton.setOnClickListener(this);
-        impactButton.setOnClickListener(this);
         addActivityButton.setOnClickListener(this);
         addMeasurementButton.setOnClickListener(this);
     }
@@ -71,10 +68,6 @@ public class WelcomeActivity extends ActionBarActivity implements
             case R.id.cohortsButton:
                 intent = new Intent(this, ListCohortsActivity.class);
                 this.startActivity(intent);
-                break;
-            case R.id.impactButton:
-                // TODO: Have to add view for my impacts page i.e. where one could
-                // see the graphical comparison of measurements.
                 break;
             case R.id.addActivityButton:
                 intent = new Intent(this, AddActivityActivity.class);

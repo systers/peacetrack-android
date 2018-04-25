@@ -13,4 +13,4 @@
         app:showAsAction="always"
         android:title="@string/addactivity"/>
 
-</menu><!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/src/main/res/menu/allactivitiesmenu.xml -->
+</menu><!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/menu/allactivitiesmenu.xml -->

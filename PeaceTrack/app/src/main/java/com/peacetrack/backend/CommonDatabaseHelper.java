@@ -4,7 +4,10 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.peacetrack.models.cohorts.Cohorts;
+import com.peacetrack.models.activities.Activities;
+import com.peacetrack.models.measurements.Measurement;
+import com.peacetrack.models.outputs.Output;
+import com.peacetrack.models.cohorts.Cohort;
 
 /*
  * @author Pooja
@@ -31,13 +34,15 @@ public class CommonDatabaseHelper extends SQLiteOpenHelper {
 		return commonDatabaseHelper;
 	}
 
-	// When database is created this mentod will be called and within this
+	// When database is created this method will be called and within this
 	// method further methods will be called to create tables(in case they are
 	// not)
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		Cohorts.onCreate(db);
-
+		Cohort.onCreate(db);
+		Activities.onCreate(db);
+		Output.onCreate(db);
+		Measurement.onCreate(db);
 	}
 
 	// Method called during upgradation

@@ -4,104 +4,218 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:id="@+id/scrollView">
-<LinearLayout 
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" >
-
-    <TextView
-        android:id="@+id/cohortname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:padding="20dp"
-        android:text="@string/textview"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="@color/lightgrey" />
-    
-    <RelativeLayout
-        android:paddingLeft="10dp"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white" >
-
-
-        <TextView
-            android:id="@+id/activityTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:background="@null"
-            android:textColor="@color/darkgrey"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:orientation="horizontal"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp" >
+        android:orientation="vertical"
+        android:weightSum="1">
 
-        <TextView
-            android:id="@+id/numEvents"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@null"
-            android:gravity="left"
-            android:paddingLeft="5dp"
-            android:textColor="@color/darkgrey"
-            android:textSize="14sp" />
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="300dp"
+            android:paddingTop="15dp"
+            android:layout_weight="0.88">
 
-        <TextView
-            android:id="@+id/totalParticipants"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@null"
-            android:gravity="right"
-            android:paddingRight="5dp"
+            <TextView
+                android:id="@+id/cohortName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="5dp"
+                android:textColor="@color/darkgrey"
+                android:textSize="14sp"
+                android:text="@string/addcohortactivity_name_label" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cohortNameTextView"
+                android:layout_marginLeft="71dp"
+                android:layout_marginStart="71dp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/cohortName"
+                android:layout_toEndOf="@+id/cohortName"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cohortdetailsactivity_description_label"
+                android:id="@+id/cohortDescription"
+                android:layout_below="@+id/cohortNameTextView"
+                android:paddingLeft="5dp"
+                android:paddingTop="15dp"
+                android:textColor="@color/darkgrey"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cohortDescriptionTextView"
+                android:paddingTop="15dp"
+                android:layout_alignTop="@+id/cohortDescription"
+                android:layout_alignLeft="@+id/cohortNameTextView"
+                android:layout_alignStart="@+id/cohortNameTextView"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cohortdetailsactivity_member_label"
+                android:id="@+id/textView"
+                android:paddingLeft="5dp"
+                android:paddingTop="15dp"
+                android:textColor="@color/darkgrey"
+                android:textSize="14sp"
+                android:layout_below="@+id/cohortDescription"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/addcohortactivity_males_label"
+                android:id="@+id/textView2"
+                android:paddingLeft="5dp"
+                android:paddingTop="15dp"
+                android:textColor="@color/darkgrey"
+                android:textSize="14sp"
+                android:layout_below="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/addcohortactivity_females_label"
+                android:id="@+id/textView3"
+                android:paddingLeft="5dp"
+                android:paddingTop="15dp"
+                android:textColor="@color/darkgrey"
+                android:textSize="14sp"
+                android:layout_below="@+id/textView2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/addcohortactivity_agerange_label"
+                android:id="@+id/textView4"
+                android:paddingLeft="5dp"
+                android:paddingTop="15dp"
+                android:textColor="@color/darkgrey"
+                android:textSize="14sp"
+                android:layout_below="@+id/textView3"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/addcohortactivity_position_label"
+                android:id="@+id/textView5"
+                android:paddingLeft="5dp"
+                android:paddingTop="15dp"
+                android:textColor="@color/darkgrey"
+                android:textSize="14sp"
+                android:layout_below="@+id/textView4"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cohortdetailsactivity_other_label"
+                android:id="@+id/textView6"
+                android:paddingLeft="5dp"
+                android:paddingTop="15dp"
+                android:textColor="@color/darkgrey"
+                android:textSize="14sp"
+                android:layout_below="@+id/textView5"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cohortNoOfMembers"
+                android:paddingTop="15dp"
+                android:textSize="14sp"
+                android:layout_below="@+id/cohortDescriptionTextView"
+                android:layout_alignLeft="@+id/cohortDescriptionTextView"
+                android:layout_alignStart="@+id/cohortDescriptionTextView" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cohortNoOfMales"
+                android:paddingTop="15dp"
+                android:textSize="14sp"
+                android:layout_below="@+id/cohortNoOfMembers"
+                android:layout_alignLeft="@+id/cohortNoOfMembers"
+                android:layout_alignStart="@+id/cohortNoOfMembers" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cohortNoOfFemales"
+                android:paddingTop="15dp"
+                android:textSize="14sp"
+                android:layout_below="@+id/cohortNoOfMales"
+                android:layout_alignLeft="@+id/cohortNoOfMales"
+                android:layout_alignStart="@+id/cohortNoOfMales" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cohortAgeRange"
+                android:paddingTop="15dp"
+                android:textSize="14sp"
+                android:layout_below="@+id/cohortNoOfFemales"
+                android:layout_alignLeft="@+id/cohortNoOfFemales"
+                android:layout_alignStart="@+id/cohortNoOfFemales" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cohortPosition"
+                android:paddingTop="15dp"
+                android:textSize="14sp"
+                android:layout_below="@+id/cohortAgeRange"
+                android:layout_alignLeft="@+id/cohortAgeRange"
+                android:layout_alignStart="@+id/cohortAgeRange" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cohortOtherNotes"
+                android:paddingTop="15dp"
+                android:textSize="14sp"
+                android:layout_below="@+id/cohortPosition"
+                android:layout_alignLeft="@+id/cohortPosition"
+                android:layout_alignStart="@+id/cohortPosition" />
+
+        </RelativeLayout>
+
+        <Button
+            android:textSize="22sp"
             android:textColor="@color/darkgrey"
-            android:textSize="14sp" />
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:padding="10dp"
+            android:text="@string/addnewactivity"
+            android:id="@+id/addnewactivitybutton"/>
+
+        <Button
+            android:textSize="22sp"
+            android:textColor="@color/darkgrey"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/addnewmeasurement"
+            android:id="@+id/addnewmeasurementbutton"/>
+
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/activityGraphLinearLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="233dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:paddingLeft="3dp"
-        android:paddingRight="3dp" />
-
-    <Button
-        android:textSize="22sp"
-        android:textColor="@android:color/white"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/addnewactivity"
-        android:textStyle="bold"
-        android:id="@+id/addnewactivitybutton"/>
-    <Button
-        android:textSize="22sp"
-        android:textColor="@android:color/white"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/addnewmeasurement"
-        android:textStyle="bold"
-        android:id="@+id/addnewmeasurementbutton"/>
-    </LinearLayout>
 </ScrollView>
