@@ -2,20 +2,6 @@
 <items version="2" >
 
     <item
-        jar="/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="23.0.0 rc2"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-8eabde8776e0b93df4a76875474406375bebb86c.jar" />
-    </item>
-    <item
-        jar="/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0 rc2"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/pre-dexed/debug/classes-ce239d465c2da6f3b9e1f0e5e766c09b9a72e7a7.jar" />
-    </item>
-    <item
         jar="/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0 rc2"
@@ -28,6 +14,48 @@
         revision="23.0.0 rc2"
         sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
         <dex dex="/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-9a8536311a16c78489fc4eadcfb4049b120dcbcc.jar" />
+    </item>
+    <item
+        jar="/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/pre-dexed/debug/classes-ce239d465c2da6f3b9e1f0e5e766c09b9a72e7a7.jar" />
+    </item>
+    <item
+        jar="/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-750a684e20d4058f57e1bde6c98fc618f983f025.jar" />
+    </item>
+    <item
+        jar="/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/libs/achartengine-1.0.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="b2bb0af9f390c0edd4d7d95f613f38da3abe0144">
+        <dex dex="/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/pre-dexed/debug/achartengine-1.0.0-f6254ab00f494b922ee9e754476819ab9a73b961.jar" />
+    </item>
+    <item
+        jar="/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/home/bhagya/StudioProjects/PeaceTrack/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-8eabde8776e0b93df4a76875474406375bebb86c.jar" />
+    </item>
+    <item
+        jar="/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/pre-dexed/debug/classes-b27a2380124b3a9daf3935c3a4679ba73d9f99e2.jar" />
+    </item>
+    <item
+        jar="/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc2"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/bhagya/projects/peacetrack-android/PeaceTrack/app/build/intermediates/pre-dexed/debug/classes-8bf722181c6e4b188bee6cb4e4b447b37910191d.jar" />
     </item>
 
 </items>

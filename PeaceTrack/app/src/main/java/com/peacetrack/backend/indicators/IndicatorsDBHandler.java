@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.peacetrack.backend.indicators;
 
 import java.io.FileOutputStream;
@@ -18,10 +15,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.peacetrack.models.indicators.Indicators;
 
-/**
- * @author Pooja
- * 
- */
 public class IndicatorsDBHandler extends SQLiteOpenHelper {
 
 	private String databasePath;

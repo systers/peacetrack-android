@@ -1,7 +1,5 @@
 package com.peacetrack.views.welcome;
 
-import java.util.List;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,9 +7,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -23,6 +23,27 @@ import android.widget.Toast;
 
 import com.peacetrack.R;
 import com.peacetrack.backend.indicators.IndicatorsDBHandler;
+import com.peacetrack.models.login.Post;
+import com.peacetrack.models.login.Sector;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.auth.BasicScheme;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.HTTP;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Login Page for a Volunteer to login to the system and
@@ -39,9 +60,15 @@ public class LoginActivity extends ActionBarActivity implements
     private Spinner postSpinner;
     private Spinner sectorSpinner;
 
-    private IndicatorsDBHandler indicatorsDBHandler;
     private List<String> sectorList;
     private ArrayAdapter<String> sectorDataAdapter;
+
+    private JSONObject posts, sectors;
+    private ArrayList<Post> postArrayList;
+    private ArrayList<Sector> sectorArrayList;
+
+    private static final String USERNAME = "Bhagya";
+    private static final String PASSWORD = "lahiru123";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +77,6 @@ public class LoginActivity extends ActionBarActivity implements
 
         if (isNetworkAvailable()) {
             initialize();
-            createPostList();
-            createSectorList();
             bindLoginButtonListener();
         } else {
             showNetworkErrorDialog();
@@ -76,13 +101,24 @@ public class LoginActivity extends ActionBarActivity implements
         nameEditText = (EditText) findViewById(R.id.nameEditText);
         emailEditText = (EditText) findViewById(R.id.nameEditEmail);
 
-        indicatorsDBHandler = new IndicatorsDBHandler(this);
-
         postSpinner = (Spinner) findViewById(R.id.post_spinner);
+
+        posts = null;
+        sectors = null;
+
+        postArrayList = new ArrayList<Post>();
+        sectorArrayList = new ArrayList<Sector>();
+
+        GetPostListTask postTask = new GetPostListTask();
+        postTask.execute();
+
+        GetSectorListTask sectorTask = new GetSectorListTask();
+        sectorTask.execute();
     }
 
     private void createPostList() {
-        List<String> postList = indicatorsDBHandler.getAllPosts();
+        this.setPostList();
+        List<String> postList = this.getAllPosts();
         ArrayAdapter<String> postDataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, postList);
         postDataAdapter
@@ -92,13 +128,94 @@ public class LoginActivity extends ActionBarActivity implements
     }
 
     private void createSectorList() {
+        this.setSectorList();
         sectorSpinner = (Spinner) findViewById(R.id.sector_spinner);
-        sectorList = indicatorsDBHandler.getAllSectors();
+        sectorList = this.getSectors(postArrayList.get(0).getSectors());
         sectorDataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, sectorList);
         sectorDataAdapter
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sectorSpinner.setAdapter(sectorDataAdapter);
+    }
+
+    private void setSectorList() {
+        if(sectors == null) {
+            this.showNoDataDialog();
+        }
+        else {
+            try {
+                int count = sectors.getInt("count");
+                JSONArray results = sectors.getJSONArray("results");
+                for (int i = 0; i < count; i++) {
+                    JSONObject resultsJSONObject = results.getJSONObject(i);
+                    int id = resultsJSONObject.getInt("id");
+                    String name = resultsJSONObject.getString("sector_name");
+                    String desc = resultsJSONObject.getString("sector_desc");
+                    String code = resultsJSONObject.getString("sector_code");
+
+                    Sector sector = new Sector();
+                    sector.setId(id);
+                    sector.setName(name);
+                    sector.setCode(code);
+                    sector.setDes(desc);
+
+                    sectorArrayList.add(sector);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void setPostList() {
+        if(posts == null) {
+            this.showNoDataDialog();
+        }
+        else {
+            try {
+                int count = posts.getInt("count");
+                JSONArray results = posts.getJSONArray("results");
+                for (int i = 0; i < count; i++) {
+                    JSONObject resultsJSONObject = results.getJSONObject(i);
+                    int id = resultsJSONObject.getInt("id");
+                    String name = resultsJSONObject.getString("post_name");
+                    int region = resultsJSONObject.getInt("post_region");
+
+                    JSONArray array = resultsJSONObject.getJSONArray("sector");
+                    int[] sectors = new int[array.length()];
+                    for (int j = 0; j < array.length(); j++) {
+                        sectors[j] = array.getInt(j);
+                    }
+
+                    Post post = new Post();
+                    post.setId(id);
+                    post.setName(name);
+                    post.setRegion(region);
+                    post.setSectors(sectors);
+
+                    postArrayList.add(post);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private ArrayList<String> getAllPosts() {
+        ArrayList<String> postList = new ArrayList<String>();
+        for(int i=0; i<postArrayList.size(); i++) {
+            postList.add(postArrayList.get(i).getName());
+        }
+        return postList;
+    }
+
+    private ArrayList<String> getSectors(int[] sectorIds) {
+        ArrayList<String> sectorList = new ArrayList<String>();
+        for(int i=0; i<sectorIds.length; i++) {
+            sectorList.add(sectorArrayList.get(sectorIds[i]).getName());
+        }
+
+        return sectorList;
     }
 
     private void bindLoginButtonListener() {
@@ -165,13 +282,19 @@ public class LoginActivity extends ActionBarActivity implements
                                long id) {
         switch (parent.getId()) {
             case R.id.post_spinner:
-                // If the post changes, update the associated sectors
-                String selectedPost = parent.getItemAtPosition(position).toString();
-                List<String> newSectors = indicatorsDBHandler
-                        .getAllSectorsForPost(selectedPost);
-                sectorList.clear();
-                sectorList.addAll(newSectors);
-                sectorDataAdapter.notifyDataSetChanged();
+                if(sectorList != null) {
+                    // If the post changes, update the associated sectors
+                    String selectedPost = parent.getItemAtPosition(position).toString();
+                    List<String> newSectors = null;
+                    for(int i=0; i<postArrayList.size(); i++) {
+                        if(selectedPost.equals(postArrayList.get(i).getName())) {
+                            newSectors = getSectors(postArrayList.get(i).getSectors());
+                        }
+                    }
+                    sectorList.clear();
+                    sectorList.addAll(newSectors);
+                    sectorDataAdapter.notifyDataSetChanged();
+                }
                 break;
         }
     }
@@ -184,7 +307,31 @@ public class LoginActivity extends ActionBarActivity implements
         alertDialogBuilder.setTitle(getString(R.string.networkUnavailableTitle));
         // set dialog message
         alertDialogBuilder
-                .setMessage(getString(R.string.networkUnavailableTitle))
+                .setMessage(getString(R.string.networkUnavailableMessage))
+                .setCancelable(false)
+                .setPositiveButton(getString(R.string.ok),
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                                // if this button is clicked, close
+                                // current activity
+                                LoginActivity.this.finish();
+                            }
+                        });
+        // create alert dialog
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        // show it
+        alertDialog.show();
+    }
+
+    private void showNoDataDialog() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                LoginActivity.this);
+        // set title
+        alertDialogBuilder.setTitle(getString(R.string.noDataTitle));
+        // set dialog message
+        alertDialogBuilder
+                .setMessage(getString(R.string.noDataMessage))
                 .setCancelable(false)
                 .setPositiveButton(getString(R.string.ok),
                         new DialogInterface.OnClickListener() {
@@ -213,4 +360,109 @@ public class LoginActivity extends ActionBarActivity implements
         finish();
     }
 
+    class GetPostListTask extends AsyncTask<String, String, JSONObject> {
+
+        @Override
+        protected JSONObject doInBackground(String... args) {
+            JSONObject posts = this.getRequest();
+            return posts;
+        }
+
+        public JSONObject getRequest() {
+            JSONObject json = null;
+            BufferedReader bufferedReader = null;
+
+            try {
+                HttpClient httpClient = new DefaultHttpClient();
+                HttpGet httpGet = new HttpGet();
+
+                URI uri = new URI("http://54.183.13.103/api/ptposts/?format=json");
+                httpGet.setURI(uri);
+                httpGet.addHeader(BasicScheme.authenticate(
+                        new UsernamePasswordCredentials(USERNAME, PASSWORD),
+                        HTTP.UTF_8, false));
+
+                HttpResponse httpResponse = httpClient.execute(httpGet);
+
+                InputStream inputStream = httpResponse.getEntity().getContent();
+                bufferedReader = new BufferedReader(new InputStreamReader(
+                        inputStream));
+
+                StringBuilder responseStrBuilder = new StringBuilder();
+                String inputStr;
+                while ((inputStr = bufferedReader.readLine()) != null)
+                    responseStrBuilder.append(inputStr);
+                json = new JSONObject(responseStrBuilder.toString());
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if (bufferedReader != null) {
+                    try {
+                        bufferedReader.close();
+                    } catch (IOException e) {
+                        // TODO: handle exception
+                    }
+                }
+            }
+            return json;
+        }
+
+        protected void onPostExecute(JSONObject result) {
+            posts = result;
+            createPostList();
+        }
+    }
+
+    class GetSectorListTask extends AsyncTask<String, String, JSONObject> {
+
+        @Override
+        protected JSONObject doInBackground(String... args) {
+            JSONObject sectors = this.getRequest();
+            return sectors;
+        }
+
+        public JSONObject getRequest() {
+            JSONObject json = null;
+            BufferedReader bufferedReader = null;
+
+            try {
+                HttpClient httpClient = new DefaultHttpClient();
+                HttpGet httpGet = new HttpGet();
+
+                URI uri = new URI("http://54.183.13.103/api/sectors/?format=json");
+                httpGet.setURI(uri);
+                httpGet.addHeader(BasicScheme.authenticate(
+                        new UsernamePasswordCredentials(USERNAME, PASSWORD),
+                        HTTP.UTF_8, false));
+
+                HttpResponse httpResponse = httpClient.execute(httpGet);
+
+                InputStream inputStream = httpResponse.getEntity().getContent();
+                bufferedReader = new BufferedReader(new InputStreamReader(
+                        inputStream));
+
+                StringBuilder responseStrBuilder = new StringBuilder();
+                String inputStr;
+                while ((inputStr = bufferedReader.readLine()) != null)
+                    responseStrBuilder.append(inputStr);
+                json = new JSONObject(responseStrBuilder.toString());
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if (bufferedReader != null) {
+                    try {
+                        bufferedReader.close();
+                    } catch (IOException e) {
+                        // TODO: handle exception
+                    }
+                }
+            }
+            return json;
+        }
+
+        protected void onPostExecute(JSONObject result) {
+            sectors = result;
+            createSectorList();
+        }
+    }
 }
