@@ -1,7 +1,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/scrollView"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:id="@+id/scrollView"
     android:scrollbars="vertical"
     android:fillViewport="true">
 
@@ -25,7 +25,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/activityName"
+            android:id="@+id/cohortName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="0dp"
@@ -39,7 +39,9 @@
             android:paddingTop="10dp"
             android:textColor="@color/darkgrey"
             android:textSize="17sp"
-            android:textStyle="bold" />
+            android:textStyle="bold">
+            <requestFocus/>
+        </EditText>
 
         <TextView
             android:id="@+id/activityDescriptionLabel"
@@ -55,7 +57,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/activityDescription"
+            android:id="@+id/cohortDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="0dp"
@@ -161,73 +163,18 @@
             android:textSize="17sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/activityOutputLabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/addactivityactivity_outputs_label"
-            android:paddingBottom="10dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="10dp"
-            android:paddingTop="20dp"
-            android:textColor="@color/primary_dark_material_light"
-            android:textSize="17sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/activityOutputs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/rounded_edittext"
-            android:hint="dsjakdnskjdnsa"
-            android:inputType="none"
-            android:paddingBottom="10dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
-            android:textColor="@color/darkgrey"
-            android:textColorHint="#969696"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            android:cursorVisible="false" />
-
-        <EditText
-            android:id="@+id/associatedoutputdata"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_edittext"
-            android:clickable="true"
-            android:hint="cdfew"
-            android:inputType="none"
-            android:paddingBottom="10dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"
-            android:textColor="@color/darkgrey"
-            android:textSize="17sp"
-            android:textStyle="bold" />
-
         <Button
-            android:id="@+id/saveactivitybutton"
+            android:id="@+id/nextbutton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|bottom"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="50dp"
             android:padding="10dp"
-            android:text="@string/save"
-            android:textColor="@android:color/white"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:text="@string/next"
+            android:textColor="@color/darkgrey"
+            android:textSize="22sp" />
+
     </LinearLayout>
 
 </ScrollView>

@@ -13,4 +13,4 @@
         app:showAsAction="always"
         android:title="@string/addmeasurement"/>
 
-</menu><!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/src/main/res/menu/allmeasurementsmenu.xml -->
+</menu><!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/menu/allmeasurementsmenu.xml -->

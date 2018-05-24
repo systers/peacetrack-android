@@ -14,15 +14,18 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.peacetrack.R;
+import com.peacetrack.backend.activities.ActivityDAO;
 import com.peacetrack.backend.cohorts.CohortsDAO;
-import com.peacetrack.models.cohorts.Cohorts;
+import com.peacetrack.models.activities.Activities;
+import com.peacetrack.models.cohorts.Cohort;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -30,15 +33,28 @@ import java.util.Calendar;
 public class AddActivityActivity extends ActionBarActivity implements
         View.OnClickListener {
 
+    private boolean isEdit;
+    private String oldTitle;
+
+    private Activities activity;
+
     static final int DATE_DIALOG_ID = 100;
     static final int TIME_DIALOG_ID = 101;
-    private CohortsDAO cohortsDBHandler;
-    private ArrayList<Cohorts> cohortList;
+
+    private EditText nameEditText;
+    private EditText descriptionEditText;
+
+    private ArrayList<Cohort> cohortList;
     private Spinner cohortSpinner;
+    private ArrayAdapter<String> cohortDataAdapter;
+
     private EditText dateEditText;
     private int year, month, day;
     private EditText timeEditText;
     private int hour, minute;
+
+    private Button nextButton;
+
     private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
 
         // when dialog box is closed, below method will be called.
@@ -48,10 +64,21 @@ public class AddActivityActivity extends ActionBarActivity implements
             day = selectedDay;
 
             // set selected date into EditText
-            dateEditText.setText(new StringBuilder().append(day)
-                    .append("-").append(month + 1).append("-").append(year).append(" "));
+            if(day<10 && month<10)
+                dateEditText.setText(new StringBuilder().append("0").append(day)
+                        .append("-").append("0").append(month + 1).append("-").append(year).append(" "));
+            else if(day<10 && month>=10)
+                dateEditText.setText(new StringBuilder().append("0").append(day)
+                        .append("-").append(month + 1).append("-").append(year).append(" "));
+            else if(day>=10 && month<10)
+                dateEditText.setText(new StringBuilder().append(day)
+                        .append("-").append("0").append(month + 1).append("-").append(year).append(" "));
+            else
+                dateEditText.setText(new StringBuilder().append(day)
+                        .append("-").append(month + 1).append("-").append(year).append(" "));
         }
     };
+
     private TimePickerDialog.OnTimeSetListener timePickerListener = new TimePickerDialog.OnTimeSetListener() {
         public void onTimeSet(TimePicker view, int selectedHour, int selectedMinute) {
             hour = selectedHour;
@@ -74,20 +101,34 @@ public class AddActivityActivity extends ActionBarActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addactivity);
 
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
         getSupportActionBar().setDisplayShowHomeEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        cohortsDBHandler = new CohortsDAO(this);
+        initialize();
+        if(isEdit) {
+            setEditableElements();
+        }
+    }
+
+    private void initialize() {
+        isEdit = getIntent().getBooleanExtra("isEdit", false);
+        if (isEdit) {
+            int activityId = getIntent().getIntExtra("activityId", 0);
+            ActivityDAO activityDAO = new ActivityDAO(getApplicationContext());
+            activity = activityDAO.getActivityWithID(activityId);
+            oldTitle = activity.getTitle();
+        }
+        else {
+            activity = new Activities();
+        }
+        CohortsDAO cohortsDBHandler = new CohortsDAO(this);
         cohortSpinner = (Spinner) findViewById(R.id.activity_cohort_spinner);
 
         cohortList = cohortsDBHandler.getAllCohorts();
 
         if (cohortList.size() > 0) {
+            nameEditText = (EditText) findViewById(R.id.cohortName);
+            descriptionEditText = (EditText) findViewById(R.id.cohortDescription);
 
             createCohortList();
 
@@ -110,69 +151,76 @@ public class AddActivityActivity extends ActionBarActivity implements
             timeEditText.setClickable(true);
             timeEditText.setOnClickListener(this);
 
-            TextView timeTextView = (TextView) findViewById(R.id.activityTime);
-            timeTextView.setFocusable(false);
-            timeTextView.setClickable(true);
-            timeTextView.setOnClickListener(this);
-
-            TextView textView = (TextView) findViewById(R.id.associatedoutputdata);
-            textView.setFocusable(false);
-            textView.setClickable(true);
-            textView.setOnClickListener(this);
+            nextButton = (Button) findViewById(R.id.nextbutton);
+            nextButton.setOnClickListener(this);
         } else {
-            // If network not available then show an error message
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                    AddActivityActivity.this);
-            // set title
-            alertDialogBuilder.setTitle(getString(R.string.cohortListEmptyTitle));
-            // set dialog message
-            alertDialogBuilder
-                    .setMessage(getString(R.string.cohortListEmptyMessage))
-                    .setCancelable(false)
-                    .setPositiveButton(getString(R.string.yes),
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog,
-                                                    int id) {
-                                    try {
-                                        Class actClass = Class
-                                                .forName("com.peacetrack.views.cohorts.AddCohortActivity");
-                                        Intent intent = new Intent(
-                                                AddActivityActivity.this, actClass);
-                                        startActivity(intent);
-                                    } catch (ClassNotFoundException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                            })
-                    .setNegativeButton(getString(R.string.no),
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog,
-                                                    int id) {
-                                    // if this button is clicked, close
-                                    // current activity
-                                    AddActivityActivity.this.finish();
-                                }
-                            });
-            // create alert dialog
-            AlertDialog alertDialog = alertDialogBuilder.create();
-            // show it
-            alertDialog.show();
+            showNoCohortsDialog();
         }
+    }
+
+    private void setEditableElements() {
+        nameEditText.setText(activity.getTitle());
+        descriptionEditText.setText(activity.getDescription());
+        dateEditText.setText(activity.getDate());
+        timeEditText.setText(activity.getTime());
+
+        int spinnerPosition = cohortDataAdapter.getPosition(getSelectedCohortName());
+        cohortSpinner.setSelection(spinnerPosition);
     }
 
     private void createCohortList() {
         int i = 0;
         String[] cohortNames = new String[cohortList.size()];
 
-        for (Cohorts cohort : cohortList) {
+        for (Cohort cohort : cohortList) {
             cohortNames[i++] = cohort.getName();
         }
 
-        ArrayAdapter<String> cohortDataAdapter = new ArrayAdapter<String>(this,
+        cohortDataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, cohortNames);
         cohortDataAdapter
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         cohortSpinner.setAdapter(cohortDataAdapter);
+    }
+
+    private void showNoCohortsDialog() {
+        // If no cohorts are available then show an error message
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                AddActivityActivity.this);
+        // set title
+        alertDialogBuilder.setTitle(getString(R.string.cohortListEmptyTitle));
+        // set dialog message
+        alertDialogBuilder
+                .setMessage(getString(R.string.cohortListEmptyMessage))
+                .setCancelable(false)
+                .setPositiveButton(getString(R.string.yes),
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                                try {
+                                    Class actClass = Class
+                                            .forName("com.peacetrack.views.cohorts.AddCohortActivity");
+                                    Intent intent = new Intent(
+                                            AddActivityActivity.this, actClass);
+                                    startActivity(intent);
+                                } catch (ClassNotFoundException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        })
+                .setNegativeButton(getString(R.string.no),
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int id) {
+                                // if this button is clicked, close
+                                // current activity
+                                AddActivityActivity.this.finish();
+                            }
+                        });
+        // create alert dialog
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        // show it
+        alertDialog.show();
     }
 
     /*
@@ -192,6 +240,94 @@ public class AddActivityActivity extends ActionBarActivity implements
         }
     }
 
+    private void saveActivity() {
+        String title = nameEditText.getText().toString();
+        String date = dateEditText.getText().toString();
+        String time = timeEditText.getText().toString();
+
+        if(isEdit && !title.equals(oldTitle) && checkExistingActivity(title)) {
+                Toast.makeText(AddActivityActivity.this,
+                        getString(R.string.duplicateactivitycheck),
+                        Toast.LENGTH_SHORT).show();
+                return;
+        }
+        if (title.length() == 0 && (date.length() == 0 || time.length() == 0)) {
+            Toast.makeText(AddActivityActivity.this,
+                    getString(R.string.activitycheck), Toast.LENGTH_SHORT)
+                    .show();
+            return;
+        }
+        if (title.length() == 0) {
+            Toast.makeText(AddActivityActivity.this,
+                    getString(R.string.activitynamecheck), Toast.LENGTH_SHORT)
+                    .show();
+            return;
+        }
+        if (date.length() == 0) {
+            Toast.makeText(AddActivityActivity.this,
+                    getString(R.string.activitydatecheck), Toast.LENGTH_SHORT)
+                    .show();
+            return;
+        }
+        if (time.length() == 0) {
+            Toast.makeText(AddActivityActivity.this,
+                    getString(R.string.activitytimecheck), Toast.LENGTH_SHORT)
+                    .show();
+            return;
+        }
+        if(!isEdit && checkExistingActivity(title)) {
+            Toast.makeText(AddActivityActivity.this,
+                    getString(R.string.duplicateactivitycheck),
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        activity.setTitle(title);
+        activity.setDescription(descriptionEditText.getText().toString());
+        activity.setDate(date);
+        activity.setTime(time);
+        activity.setCohort(getSelectedCohortId());
+
+        saveActivityInDatabase();
+    }
+
+    private int getSelectedCohortId() {
+        String cohort = cohortSpinner.getSelectedItem().toString();
+        int id = -1;
+        for(int i=0; i<cohortList.size(); i++) {
+            if(cohort.equals(cohortList.get(i).getName())) {
+                id = cohortList.get(i).getId();
+                break;
+            }
+        }
+        return id;
+    }
+
+    private String getSelectedCohortName() {
+        String cohort = null;
+        for(int i=0; i<cohortList.size(); i++) {
+            if(cohortList.get(i).getId() == activity.getCohort()) {
+                cohort = cohortList.get(i).getName();
+                break;
+            }
+        }
+        return cohort;
+    }
+
+    private void saveActivityInDatabase() {
+        ActivityDAO activityDAO = new ActivityDAO(getApplicationContext());
+        if(!isEdit)
+            activityDAO.addActivity(activity);
+        else
+            activityDAO.updateActivity(activity);
+
+        int activityId = activityDAO.getActivityWithTitle(activity.getTitle()).getId();
+        Intent intent = new Intent(this, AddIndicatorsActivity.class);
+        intent.putExtra("activityId", activityId);
+        intent.putExtra("isEdit", isEdit);
+        startActivity(intent);
+    }
+
     @Override
     public void onClick(View v) {
         int id = v.getId();
@@ -202,13 +338,8 @@ public class AddActivityActivity extends ActionBarActivity implements
             case R.id.activityTime:
                 showDialog(TIME_DIALOG_ID);
                 break;
-            case R.id.associatedoutputdata:
-                Intent intent = new Intent(AddActivityActivity.this,
-                        AddIndicatorsActivity.class);
-                AddActivityActivity.this.startActivity(intent);
-                break;
-            case R.id.saveactivitybutton:
-
+            case R.id.nextbutton:
+                saveActivity();
                 break;
         }
     }
@@ -227,4 +358,15 @@ public class AddActivityActivity extends ActionBarActivity implements
         return null;
     }
 
+    private boolean checkExistingActivity(String name) {
+        ActivityDAO activityDAO = new ActivityDAO(getApplicationContext());
+        ArrayList<Activities> allActivities = activityDAO.getAllActivities();
+
+        for (int i = 0; i < allActivities.size(); i++) {
+            if (allActivities.get(i).getTitle().equalsIgnoreCase(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
