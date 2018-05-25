@@ -9,4 +9,4 @@ android:shape="rectangle" android:padding="10dp">
   android:topLeftRadius="5dp"
   android:topRightRadius="5dp"/>
 </shape>
-<!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/src/main/res/drawable/rounded_edittext.xml -->
+<!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/drawable/rounded_edittext.xml -->

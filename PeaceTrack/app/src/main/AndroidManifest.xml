@@ -51,13 +51,25 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/addactivityactivity_label" />
         <activity
+            android:name="com.peacetrack.views.activities.AddActivityForCohortActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/addactivityactivity_label" />
+        <activity
             android:name="com.peacetrack.views.measurements.AddMeasurementActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/addmeasurementactivity_label" />
+        <activity
+            android:name="com.peacetrack.views.measurements.AddMeasurementForCohortActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/addmeasurementactivity_label" />
         <activity
             android:name="com.peacetrack.views.cohorts.CohortDetailsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/cohortdetailsactivity_label" />
+        <activity
+            android:name="com.peacetrack.views.activities.ActivityDetailsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/Activitydetailsactivity_label" />
         <activity
       		android:name="com.peacetrack.views.measurements.MeasurementDetailsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"

@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:padding="20dp"
-        android:text="@string/textview"
+        android:text="njnk"
         android:textSize="20sp"
         android:textStyle="bold" />
     <View
@@ -74,34 +74,5 @@
             android:textSize="14sp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/activityGraphLinearLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="277dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:paddingLeft="3dp"
-        android:paddingRight="3dp" />
-
-    <Button
-        android:textSize="22sp"
-        android:textColor="@android:color/white"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/addnewactivity"
-        android:textStyle="bold"
-        android:id="@+id/addnewactivitybutton"/>
-    <Button
-        android:textSize="22sp"
-        android:textColor="@android:color/white"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/addnewmeasurement"
-        android:textStyle="bold"
-        android:id="@+id/addnewmeasurementbutton"/>
     </LinearLayout>
-</ScrollView><!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/src/main/res/layout/activity_measurementdetails.xml -->
+</ScrollView><!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/layout/activity_measurementdetails.xml -->

@@ -12,4 +12,4 @@
         app:showAsAction="always"
         android:title="@string/delete"/>
 
-</menu><!-- From: file:/home/bhagya/StudioProjects/PeaceTrack/app/src/main/res/menu/addmenu.xml -->
+</menu><!-- From: file:/home/bhagya/projects/peacetrack-android/PeaceTrack/app/src/main/res/menu/addmenu.xml -->
