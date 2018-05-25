@@ -2,40 +2,80 @@
 <resources>
 
 	<!-- PeaceTrack Application -->
-    <string name="app_name">PeaceTrack</string>
-    <string name="action_settings">Settings</string>
+	<string name="app_name">PeaceTrack</string>
+	<string name="action_settings">Settings</string>
 
 	<!-- Dialog box titles, messages and buttons -->
 	<string name="ok">OK</string>
 	<string name="yes">YES</string>
 	<string name="no">NO</string>
+	<string name="cancel">Cancel</string>
+	<string name="done">Done</string>
 	<string name="networkUnavailableTitle">No Internet Connection</string>
 	<string name="networkUnavailableMessage">Turn on mobile data or use WiFi to login to PeaceTrack.</string>
+	<string name="noDataTitle">Error in Fetching Data</string>
+	<string name="noDataMessage">There was an error fetching data from the server.</string>
 	<string name="cohortListEmptyTitle">No Cohorts</string>
 	<string name="cohortListEmptyMessage">Cohort list is empty. Do you want to create a new cohort?</string>
+	<string name="cohortDeleteTitle">Delete Cohort</string>
+	<string name="cohortDeleteMessage">Are you sure you want to delete this cohort? This cannot be undone.</string>
+	<string name="activityDeleteTitle">Delete Activity</string>
+	<string name="activityDeleteMessage">Are you sure you want to delete this activity? This cannot be undone.</string>
+	<string name="addActivityOutputTitle">Select Relevant Outputs:</string>
 
 	<!-- Login Page elements -->
 	<string name="name">Name</string>
-    <string name="email">E-mail</string>
-    <string name="addacountbutton">Add Account</string>
+	<string name="email">E-mail</string>
+	<string name="addacountbutton">Add Account</string>
 
 	<!-- Login Page error messages -->
-	<string name="namecheck">Please Enter Your Name</string>
-    <string name="duplicatecohortcheck">This Cohort Already Exists. Please use a different name.</string>
-    <string name="emailcheck">Please Enter Valid Email Address</string>
-    <string name="nameandemailcheck">Please Enter Your Name and Valid Email Address</string>
+	<string name="namecheck">Please Enter Your Name.</string>
+	<string name="emailcheck">Please Enter Valid Email Address.</string>
+	<string name="nameandemailcheck">Please Enter Your Name and Valid Email Address.</string>
+
+	<!-- Add Cohort Page error messages -->
+	<string name="cohortnamecheck">Please Enter Cohort Name.</string>
+	<string name="cohortcheck">Please Enter Cohort Details.</string>
+	<string name="duplicatecohortcheck">This Cohort Already Exists. Please use a different name.</string>
+
+	<!-- Add Activity Page error messages -->
+	<string name="activitycheck">Please Enter Activity Title, Date and Time.</string>
+	<string name="activitynamecheck">Please Enter Activity Title.</string>
+	<string name="activitydatecheck">Please Enter Date.</string>
+	<string name="activitytimecheck">Please Enter Time.</string>
+	<string name="duplicateactivitycheck">This Activity Already Exists. Please use a different title.</string>
+
+	<!-- Add Output Page error messages -->
+	<string name="outputcheck">Please Enter Output Name and Data.</string>
+	<string name="outputnamecheck">Please Enter Output Name.</string>
+	<string name="outputdatacheck">Please Enter Output Data.</string>
 
 	<!-- Dashboard elements -->
-    <string name="cohort">My Cohorts</string>
-    <string name="impact">My Impacts</string>
-    <string name="quickactivity">Quickly Add Activity</string>
-    <string name="quickmeasurement">Quickly Add  Measurement</string>
-    <string name="sector">Sector</string>
-    <string name="post">Post</string>
-    <string name="login">Login</string>
-    <string name="peaceTrack">PeaceTrack</string>
+	<string name="cohort">My Cohorts</string>
+	<string name="impact">My Impacts</string>
+	<string name="quickactivity">Quickly Add Activity</string>
+	<string name="quickmeasurement">Quickly Add  Measurement</string>
+	<string name="sector">Sector</string>
+	<string name="post">Post</string>
+	<string name="login">Login</string>
+	<string name="peaceTrack">PeaceTrack</string>
 
-	<!-- Activity elements -->
+	<!-- Cohort elements -->
+	<string name="addcohortactivity_name_label">NAME</string>
+	<string name="addcohortactivity_description_label">DESCRIPTION (optional)</string>
+	<string name="addcohortactivity_members_label">NO OF MEMBERS</string>
+	<string name="addcohortactivity_males_label">MALES</string>
+	<string name="addcohortactivity_females_label">FEMALES</string>
+	<string name="addcohortactivity_agerange_label">AGE RANGE (yrs)</string>
+	<string name="addcohortactivity_position_label">POSITION</string>
+	<string name="addcohortactivity_other_label">OTHER NOTES (optional)</string>
+	<string name="searchInputCohort">Search Cohort..</string>
+
+	<string name="cohortdetailsactivity_description_label">DESCRIPTION</string>
+	<string name="cohortdetailsactivity_member_label">MEMBERS</string>
+	<string name="cohortdetailsactivity_other_label">OTHER NOTES</string>
+
+	<!-- Activities elements -->
 	<string name="addactivityactivity_title_label">TITLE</string>
 	<string name="addactivityactivity_description_label">DESCRIPTION (optional)</string>
 	<string name="addactivityactivity_cohort_label">RELEVANT COHORT</string>
@@ -43,14 +83,19 @@
 	<string name="addactivityactivity_time_label">TIME</string>
 	<string name="addactivityactivity_outputs_label">ASSOCIATED OUTPUTS</string>
 
+	<string name="measurementactivity_outcome_label">OUTCOME</string>
+	<string name="measurementactivity_outcome_data_label">OUTCOME DATA</string>
+
+	<string name="activityactivity_description_label">DESCRIPTION</string>
+
 	<!-- Output Elements -->
 	<string name="projecttitle">Project Title</string>
-    <string name="outputname">Output Name</string>
-    <string name="outputdata">Output Data</string>
-    <string name="addanotheroutput">Add Another Output</string>
+	<string name="outputname">OUTPUT NAME</string>
+	<string name="outputdata">OUTPUT DATA</string>
+	<string name="addoutput">Add Output</string>
 
 	<!-- PeaceTrack Application -->
-    <string name="welcomeactivity_label">DashBoard</string>
+	<string name="welcomeactivity_label">DashBoard</string>
 	<string name="allcohortsactivity_label">All Cohorts</string>
 	<string name="allactivitiesactivity_label">All Activities</string>
 	<string name="allmeasurementsactivity_label">All Measurements</string>
@@ -58,6 +103,7 @@
 	<string name="addactivityactivity_label">Add Activity</string>
 	<string name="addmeasurementactivity_label">Add Measurement</string>
 	<string name="cohortdetailsactivity_label">Cohort Profile</string>
+	<string name="Activitydetailsactivity_label">Activity Details</string>
 	<string name="measurementdetailsactivity_label">Measurement Profile</string>
 	<string name="addindicatorsactivity_label">Add Indicators</string>
 
@@ -69,9 +115,7 @@
 	<string name="addmeasurement">Add Measurement</string>
 
 	<string name="participantshint">Number Of Members</string>
-	
-	<string name="cohortnamehint">Name</string>
-	<string name="cohortdescriptionhint">Optional Short Description</string>
+
 	<string name="agerangehint">Age Range</string>
 	<string name="maleshint">Number Of Males</string>
 	<string name="femaleshint">Number Of Females</string>
@@ -80,15 +124,19 @@
 
 	<string name="activityDateHint">Pick a Date</string>
 	<string name="activityTimeHint">Pick a Time</string>
-	
-	<string name="measurementnamehint">Title</string>
-	<string name="measurementcohortnamehint">Relevant Cohort Name(s)</string>
-	<string name="associatedoutcomehint">Associated Outcome and outcome data</string>
-	<string name="measurementdescriptionhint">Optional Short Description</string>
+	<string name="activityOutputHint">Set Outputs</string>
 
+	<string name="next">Next</string>
+	<string name="back">Back</string>
 	<string name="save">Save</string>
-	
+
 	<string name="addnewactivity">Add a new activity</string>
-	
+
 	<string name="addnewmeasurement">Add a new measurement</string>
+
+	<string name="measurementcheck">Please Enter Measurement Title, Date and Outcome Data.</string>
+	<string name="duplicatemeasurementcheck">This Measurement Already Exists. Please use a different title.</string>
+	<string name="measurementtitlecheck">Please Enter Measurement Title.</string>
+	<string name="measurementoutcomecheck">Please Enter Outcome Data.</string>
+
 </resources>
