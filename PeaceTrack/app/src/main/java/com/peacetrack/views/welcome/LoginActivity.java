@@ -1,7 +1,5 @@
 package com.peacetrack.views.welcome;
 
-import java.util.List;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -11,7 +9,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -24,12 +22,14 @@ import android.widget.Toast;
 import com.peacetrack.R;
 import com.peacetrack.backend.indicators.IndicatorsDBHandler;
 
+import java.util.List;
+
 /**
  * Login Page for a Volunteer to login to the system and
  * setup the working space
  */
 
-public class LoginActivity extends ActionBarActivity implements
+public class LoginActivity extends AppCompatActivity implements
         OnItemSelectedListener {
 
     private Button loginButton;

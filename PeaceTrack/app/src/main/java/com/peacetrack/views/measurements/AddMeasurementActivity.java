@@ -5,7 +5,7 @@ package com.peacetrack.views.measurements;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,7 +16,7 @@ import com.peacetrack.R;
  * @author Pooja
  * 
  */
-public class AddMeasurementActivity extends ActionBarActivity implements
+public class AddMeasurementActivity extends AppCompatActivity implements
 		OnClickListener {
 
 	@Override

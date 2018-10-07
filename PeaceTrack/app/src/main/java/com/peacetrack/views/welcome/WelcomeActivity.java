@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -21,7 +21,7 @@ import com.peacetrack.views.measurements.AddMeasurementActivity;
  * If the user has login to the application, then
  * show the dashboard to the user
  */
-public class WelcomeActivity extends ActionBarActivity implements
+public class WelcomeActivity extends AppCompatActivity implements
         OnClickListener {
 
     private Button cohortsButton;

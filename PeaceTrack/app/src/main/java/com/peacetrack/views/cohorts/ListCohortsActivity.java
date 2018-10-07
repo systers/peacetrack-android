@@ -3,12 +3,10 @@
  */
 package com.peacetrack.views.cohorts;
 
-import java.util.ArrayList;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -21,11 +19,13 @@ import com.peacetrack.backend.cohorts.CohortsDAO;
 import com.peacetrack.models.cohorts.Cohorts;
 import com.peacetrack.views.welcome.WelcomeActivity;
 
+import java.util.ArrayList;
+
 /**
  * @author Pooja
  * 
  */
-public class ListCohortsActivity extends ActionBarActivity {
+public class ListCohortsActivity extends AppCompatActivity {
 	protected ListView cohortsListView;
 	protected ArrayList<Cohorts> allCohorts;
 

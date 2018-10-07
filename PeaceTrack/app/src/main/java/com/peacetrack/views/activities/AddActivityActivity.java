@@ -10,7 +10,7 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -27,7 +27,7 @@ import com.peacetrack.models.cohorts.Cohorts;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class AddActivityActivity extends ActionBarActivity implements
+public class AddActivityActivity extends AppCompatActivity implements
         View.OnClickListener {
 
     static final int DATE_DIALOG_ID = 100;

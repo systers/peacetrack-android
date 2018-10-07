@@ -3,11 +3,9 @@
  */
 package com.peacetrack.views.cohorts;
 
-import java.util.ArrayList;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,11 +18,13 @@ import com.peacetrack.R;
 import com.peacetrack.backend.cohorts.CohortsDAO;
 import com.peacetrack.models.cohorts.Cohorts;
 
+import java.util.ArrayList;
+
 /**
  * @author Pooja
  * 
  */
-public class AddCohortActivity extends ActionBarActivity implements
+public class AddCohortActivity extends AppCompatActivity implements
 		OnItemSelectedListener {
 
 	protected Cohorts cohort;

@@ -91,4 +91,5 @@
 	<string name="addnewactivity">Add a new activity</string>
 	
 	<string name="addnewmeasurement">Add a new measurement</string>
+	<string name="textview"></string>
 </resources>
