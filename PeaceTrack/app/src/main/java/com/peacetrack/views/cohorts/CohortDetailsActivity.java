@@ -5,7 +5,7 @@ package com.peacetrack.views.cohorts;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -17,7 +17,7 @@ import com.peacetrack.views.measurements.AddMeasurementActivity;
 /**
  * Show the cohort details
  */
-public class CohortDetailsActivity extends ActionBarActivity implements
+public class CohortDetailsActivity extends AppCompatActivity implements
 		OnClickListener {
 
 	@Override

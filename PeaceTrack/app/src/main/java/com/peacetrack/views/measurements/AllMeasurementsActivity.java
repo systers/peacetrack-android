@@ -6,7 +6,7 @@ package com.peacetrack.views.measurements;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,7 +19,7 @@ import com.peacetrack.views.welcome.WelcomeActivity;
  * @author Pooja
  * 
  */
-public class AllMeasurementsActivity extends ActionBarActivity {
+public class AllMeasurementsActivity extends AppCompatActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

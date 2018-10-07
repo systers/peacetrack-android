@@ -38,3 +38,5 @@ bin/
 gen/
 
 appcompat_v7_3
+PeaceTrack/app/build/
+PeaceTrack/.idea/
