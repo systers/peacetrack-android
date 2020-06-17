@@ -104,7 +104,9 @@
 	          android:text="@string/save"
 	          android:textColor="@android:color/white"
 	          android:textSize="22sp"
-	          android:textStyle="bold" />
+	          android:textStyle="bold"
+              android:background="@drawable/button_shape"
+                />
     
 </LinearLayout>
 </ScrollView>

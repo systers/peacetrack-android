@@ -132,7 +132,10 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:text="@string/addacountbutton" />
+            android:text="@string/addacountbutton" 
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_shape"
+/>
 
     </RelativeLayout>
 

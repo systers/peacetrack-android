@@ -27,7 +27,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:padding="20dp"
-        android:text="@string/cohort" />
+        android:text="@string/cohort"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_shape"
+ />
 
     <Button
         android:id="@+id/impactButton"
@@ -35,7 +38,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:padding="20dp"
-        android:text="@string/impact" />
+        android:text="@string/impact"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_shape"
+ />
 
     <Button
         android:id="@+id/addActivityButton"
@@ -43,7 +49,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:padding="20dp"
-        android:text="@string/quickactivity" />
+        android:text="@string/quickactivity" 
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_shape"
+/>
     
     <Button
         android:id="@+id/addMeasurementButton"
@@ -51,6 +60,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:padding="20dp"
-        android:text="@string/quickmeasurement" />
+        android:text="@string/quickmeasurement"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_shape"
+ />
 
 </LinearLayout>
